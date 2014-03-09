@@ -35,6 +35,10 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 gem 'websocket-rails'
+gem 'slim'
+
+gem 'ember-rails'
+gem 'emblem-rails'
 
 group :development do
   gem 'debugger'
@@ -42,4 +46,5 @@ group :development do
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'rails-footnotes'
+  gem 'rspec-rails'
 end
