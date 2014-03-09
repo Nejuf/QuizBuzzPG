@@ -1,25 +1,64 @@
-# SQLite version 3.x
-#   gem install sqlite3
+# PostgreSQL. Versions 8.2 and up are supported.
 #
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
+# Install the pg driver:
+#   gem install pg
+# On OS X with Homebrew:
+#   ARCHFLAGS="-arch x86_64" gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+# On OS X with MacPorts:
+#   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
+# On Windows:
+#   gem install pg
+#       Choose the win32 build.
+#       Install PostgreSQL and put its /bin directory on your path.
+#
+# Configure Using Gemfile
+# gem 'pg'
+#
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: quiz_buzz_development
   pool: 5
   timeout: 5000
-
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  adapter: sqlite3
-  database: db/test.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: quiz_buzz_test
+  pool: 5
+  timeout: 5000
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: quiz_buzz_production
   pool: 5
   timeout: 5000
 
-production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+
+#Homebrew install:
+#
+#   if builds of PostgreSQL 9 are failing and you have version 8.x installed,
+# you may need to remove the previous version first. See:
+#   https://github.com/Homebrew/homebrew/issues/issue/2510
+
+# To migrate existing data from a previous major version (pre-9.3) of PostgreSQL, see:
+#   http://www.postgresql.org/docs/9.3/static/upgrading.html
+
+# When installing the postgres gem, including ARCHFLAGS is recommended:
+#   ARCHFLAGS="-arch x86_64" gem install pg
+
+# To install gems without sudo, see the Homebrew wiki.
+
+# To have launchd start postgresql at login:
+#     ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+# Then to load postgresql now:
+#     launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+# Or, if you don't want/need launchctl, you can just run:
+#     postgres -D /usr/local/var/postgres
+# ==> /usr/local/Cellar/postgresql/9.3.3/bin/initdb /usr/local/var/postgres -E utf8
+# ==> Summary
+# 🍺  /usr/local/Cellar/postgresql/9.3.3: 2923 files, 38M
+
+
