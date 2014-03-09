@@ -34,4 +34,7 @@ QuizBuzz::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  #Deletes middleware lock for WebsocketRails
+  config.middleware.delete Rack::Lock
 end
