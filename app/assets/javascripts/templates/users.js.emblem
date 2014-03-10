@@ -1,0 +1,5 @@
+h2 Users
+= each user in controller
+  tr
+    td= user.name
+    td= user.email
