@@ -37,4 +37,6 @@ QuizBuzz::Application.configure do
 
   #Deletes middleware lock for WebsocketRails
   config.middleware.delete Rack::Lock
+
+  config.ember.variant = :development
 end
