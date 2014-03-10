@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   validates :email, presence: true
 
-  before_save :defaults
+  before_save :ensure_defaults
 
   def is_mod?
     self.is_mod.nil? ? false : self.is_mod
