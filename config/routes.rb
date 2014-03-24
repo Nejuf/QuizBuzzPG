@@ -2,6 +2,10 @@ QuizBuzz::Application.routes.draw do
 
   root to: 'info#index'
   resources :users
+
+  post 'sign_in', to: 'sessions#sign_in'
+  post 'sign_out', to: 'sessions#sign_out'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

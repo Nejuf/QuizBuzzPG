@@ -3,6 +3,8 @@ class Session < ActiveRecord::Base
 
   validate :user_id, :token, presence: true
 
+  belongs_to :user
+  
   def self.sign_in(user_id)
     session = Session.where(user_id: user_id).first
     session ||= Session.new(user_id: user_id)
