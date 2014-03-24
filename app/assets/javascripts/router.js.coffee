@@ -2,8 +2,7 @@
 
 QuizBuzz.Router.map ()->
   @route 'index', path: '/'
-  @resource 'users'
-
-QuizBuzz.UsersRoute = Ember.Route.extend
-  model: ->
-    return this.store.find('user')
+  @resource 'users', ->
+    @route 'create'
+    @resource 'user', { path: '/:user_id' }, ->
+      @route 'edit'

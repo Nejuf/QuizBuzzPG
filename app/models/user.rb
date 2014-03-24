@@ -22,9 +22,9 @@ class User < ActiveRecord::Base
     BCrypt::Password.new(self.password_digest).is_password?(pass)
   end
   
-  def find_by_session_token(token)
-    session = Session.where(token: token)
-    session ? session.user : nil
+  def self.find_by_session_token(token)
+    sess = Session.where(token: token).first
+    sess ? sess.user : nil
   end
 
   private
