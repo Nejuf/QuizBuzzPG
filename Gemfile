@@ -40,6 +40,8 @@ gem 'slim'
 gem 'ember-rails'
 gem 'emblem-rails'
 
+gem 'haml-rails'
+
 group :development do
   gem 'debugger'
   gem 'better_errors'
