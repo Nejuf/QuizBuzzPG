@@ -1,4 +1,5 @@
-h2 Users.emblem
+h2 Users: 
+= usersCount
 = each user in controller
   tr
     td= user.name

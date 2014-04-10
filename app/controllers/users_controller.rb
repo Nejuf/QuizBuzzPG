@@ -33,7 +33,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-    debugger
     if @user.update(params)
      respond_to do |format|
         format.json {render json: @user}

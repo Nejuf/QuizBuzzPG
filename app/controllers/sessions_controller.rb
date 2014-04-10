@@ -1,4 +1,4 @@
-class SessionsController < ActionController::Base
+class SessionsController < ApplicationController
 
   def sign_in
     email = params[:email]
@@ -34,7 +34,7 @@ class SessionsController < ActionController::Base
     flash[:notices] = ["Successfully signed out."]
     respond_to do |f|
       f.html { redirect_to root_url }
-      f.json { render status:  }
+      f.json { render status: :ok}
     end
   end
 end

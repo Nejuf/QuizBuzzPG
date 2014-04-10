@@ -1,6 +1,10 @@
 h1 Welcome to Quiz Buzz!
 p A buzzing system.
 
-h2 Enter your email to start.
-form
-  input placeholder="email"
+h2 Sign In
+
+=form_tag('sign_in')
+  =label_tag(:email)
+  =email_field_tag(:email, '', placeholder: 'email')
+  =password_field_tag(:password, '', placeholder: 'password')
+  =submit_tag('Sign In')
