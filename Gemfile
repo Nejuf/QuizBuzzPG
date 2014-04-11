@@ -13,6 +13,7 @@ gem 'pg'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'ember_script-rails', '0.0.4'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -38,7 +39,9 @@ gem 'websocket-rails'
 gem 'slim'
 
 gem 'ember-rails'
+gem 'ember-source'
 gem 'emblem-rails'
+gem 'emblem-source'
 
 gem 'haml-rails'
 

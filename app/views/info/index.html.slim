@@ -1,6 +1,11 @@
 h1 Welcome to Quiz Buzz!
 p A buzzing system.
 
+h2 Sign Up
+/ =form_for(@user, url: {action: 'users'}) do |f|
+/   =f.text_field(:name)
+/   =f.submit('Sign Up')
+
 h2 Sign In
 
 =form_tag('sign_in')

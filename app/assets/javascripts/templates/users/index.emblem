@@ -1,1 +1,3 @@
 h2 users/index.emblem
+
+link-to 'Sign Up' 'users.new'

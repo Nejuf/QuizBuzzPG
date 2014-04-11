@@ -79,6 +79,14 @@ GEM
       railties (>= 3.1)
     ember-source (1.4.0)
       handlebars-source (~> 1.0)
+    ember_script (0.0.5)
+      ember_script-source (>= 0.0.2)
+      execjs
+      tilt
+    ember_script-rails (0.0.4)
+      ember_script (>= 0.0.4)
+      rails
+    ember_script-source (0.0.14)
     emblem-rails (0.2.1)
       barber-emblem (~> 0.1.1)
       ember-rails (>= 0.14.0)
@@ -205,7 +213,10 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   debugger
   ember-rails
+  ember-source
+  ember_script-rails (= 0.0.4)
   emblem-rails
+  emblem-source
   haml-rails
   jquery-rails
   meta_request

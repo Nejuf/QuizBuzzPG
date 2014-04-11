@@ -2,7 +2,10 @@
 
 QuizBuzz.Router.map ()->
   @route 'index', path: '/'
-  @resource 'users', ->
-    @route 'create'
-    @resource 'user', { path: '/:user_id' }, ->
+
+  @resource('users', ->
+    @route 'new'
+    @resource('user', { path: '/:user_id' }, ->
       @route 'edit'
+    )
+  )
