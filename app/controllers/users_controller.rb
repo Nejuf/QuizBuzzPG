@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
-     respond_to do |format|
+    respond_to do |format|
       format.json {render json: @user}
     end
   end
@@ -20,11 +20,15 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
+      flash[:notices] = ["User for #{@user.email} successfully created."]
       respond_to do |format|
+        format.html {redirect_to '/'}
         format.json {render json: @user}
       end
     else
+      flash[:errors] = @user.errors.messages
       respond_to do |format|
+        format.html {redirect_to '/'}
         format.json {render json: @user, status: 404}
       end
     end
@@ -34,11 +38,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(params)
-     respond_to do |format|
+      flash[:notices] = ["User for #{@user.email} successfully updated."]
+      respond_to do |format|
         format.json {render json: @user}
       end
     else
-     respond_to do |format|
+      flash[:errors] = @user.errors.messages
+      respond_to do |format|
         format.json {render json: @user, status: 404}
       end
     end
