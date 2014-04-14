@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:notices] = ["User for #{@user.email} successfully created."]
+      session[:session_token] = Session.sign_in(@user.id).token
       respond_to do |format|
         format.html {redirect_to '/'}
         format.json {render json: @user}

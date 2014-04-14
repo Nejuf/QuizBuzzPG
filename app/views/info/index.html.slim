@@ -1,27 +1,29 @@
 h1 Welcome to Quiz Buzz!
 p A buzzing system.
 
-h2 Sign Up
+-if controller.current_user.nil?
+  h2 Sign Up
+  =form_for(User.new) do |f|
+    div
+      =label_tag(:email)
+      =f.email_field(:email, placeholder: 'email')
+    div
+      =label_tag(:name)
+      =f.text_field(:name, placeholder: 'username')
+    div
+      =label_tag(:password)
+      =f.password_field(:password, placeholder: 'password')
+    div
+      =f.submit('Sign Up')
 
-=form_for(User.new) do |f|
-  div
+  h2 Sign In
+  =form_tag('sign_in')
     =label_tag(:email)
-    =f.email_field(:email, placeholder: 'email')
-  div
-    =label_tag(:name)
-    =f.text_field(:name, placeholder: 'username')
-  div
+    =email_field_tag(:email, '', placeholder: 'email')
     =label_tag(:password)
-    =f.password_field(:password, placeholder: 'password')
-  div
-    =f.submit('Sign Up')
-
-
-h2 Sign In
-
-=form_tag('sign_in')
-  =label_tag(:email)
-  =email_field_tag(:email, '', placeholder: 'email')
-  =label_tag(:password)
-  =password_field_tag(:password, '', placeholder: 'password')
-  =submit_tag('Sign In')
+    =password_field_tag(:password, '', placeholder: 'password')
+    =submit_tag('Sign In')
+-else
+  h2 Sign Out
+  =form_tag('sign_out')
+    =submit_tag('Sign Out')
