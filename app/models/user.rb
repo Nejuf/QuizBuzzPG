@@ -3,7 +3,7 @@ require 'bcrypt'
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password
 
-  validates :email, presence: true
+  validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: { message: "Password can't be blank."}
 
   before_save :ensure_defaults
@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   def is_password?(pass)
     BCrypt::Password.new(self.password_digest).is_password?(pass)
   end
-  
+
   def self.find_by_session_token(token)
     sess = Session.where(token: token).first
     sess ? sess.user : nil

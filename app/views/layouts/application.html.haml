@@ -9,9 +9,14 @@
     = "Welcome, #{controller.current_user.name}" if controller.current_user
     #notifications
       - if flash[:notices]
-        - flash[:notices].each do |notice|
-          %p=notice
+        .flash-notices
+          - flash[:notices].each do |notice|
+            %p=notice
       - if flash[:errors]
-        - flash[:errors].each do |error|
-          %p=error
+        .flash-errors
+          - flash[:errors].each do |error|
+            %p=error
     = yield
+
+    .footer
+      © Nejuf

@@ -6,22 +6,22 @@ p A buzzing system.
   =form_for(User.new) do |f|
     div
       =label_tag(:email)
-      =f.email_field(:email, placeholder: 'email')
+      =f.email_field(:email, placeholder: 'email', required: true)
     div
       =label_tag(:name)
-      =f.text_field(:name, placeholder: 'username')
+      =f.text_field(:name, placeholder: 'username', required: true)
     div
       =label_tag(:password)
-      =f.password_field(:password, placeholder: 'password')
+      =f.password_field(:password, placeholder: 'password', required: true)
     div
       =f.submit('Sign Up')
 
   h2 Sign In
   =form_tag('sign_in')
     =label_tag(:email)
-    =email_field_tag(:email, '', placeholder: 'email')
+    =email_field_tag(:email, '', placeholder: 'email', required: true)
     =label_tag(:password)
-    =password_field_tag(:password, '', placeholder: 'password')
+    =password_field_tag(:password, '', placeholder: 'password', required: true)
     =submit_tag('Sign In')
 -else
   h2 Sign Out

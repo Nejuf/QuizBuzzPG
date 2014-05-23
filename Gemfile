@@ -13,7 +13,7 @@ gem 'pg'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'ember_script-rails', '0.0.4'
+  gem 'ember_script-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -36,20 +36,24 @@ gem 'bcrypt-ruby'
 # gem 'capistrano'
 
 gem 'websocket-rails'
-gem 'slim'
+gem 'haml-rails'
+gem 'slim-rails'
 
 gem 'ember-rails'
 gem 'ember-source'
 gem 'emblem-rails'
 gem 'emblem-source'
 
-gem 'haml-rails'
 
 group :development do
   gem 'debugger'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
+  gem 'pry'
+  gem 'pry-debugger'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
   gem 'rails-footnotes'
   gem 'rspec-rails'
 end
